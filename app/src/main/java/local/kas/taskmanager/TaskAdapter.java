@@ -11,11 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewholder> {
-
 
     private final ArrayList<Task> myTasks;
     private final Context context;
@@ -66,10 +64,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewholder> 
     private void startDescriptionActivity(int position) {
         Task task = myTasks.get(position);
         Intent intent = new Intent(context, DescriptionActivity.class);
-        intent.putExtra(MyConstants.KEY_BUNDLE, (Serializable) task);
+        intent.putExtra(MyConstants.KEY_BUNDLE, task);
         context.startActivity(intent);
     }
-
 
     @Override
     public int getItemCount() {

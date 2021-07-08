@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Task Manager</string>
+<!--    <string name="tasks">Задачи</string>-->
+    <string name="menu_notes">Заметки</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_tasks">Задачи</string>
 
-    <string name="tasks">Задачи</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="one">шаблон1</string>
+    <string name="two">шаблон2</string>
+    <string name="three">шаблон3</string>
+    <string name="create_notes">создать заметку</string>
 </resources>

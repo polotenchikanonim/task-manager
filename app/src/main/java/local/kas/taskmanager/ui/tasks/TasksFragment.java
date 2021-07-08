@@ -1,4 +1,4 @@
-package local.kas.taskmanager;
+package local.kas.taskmanager.ui.tasks;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -15,29 +15,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import local.kas.taskmanager.R;
+import local.kas.taskmanager.Task;
+import local.kas.taskmanager.TaskAdapter;
+
 
 public class TasksFragment extends Fragment {
-
 
     private ArrayList<Task> tasks;
     private TextView textView;
 
-    public TasksFragment() {
-        // Required empty public constructor
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
-
         textView = view.findViewById(R.id.textView);
-
         return view;
-    }
 
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -56,7 +50,6 @@ public class TasksFragment extends Fragment {
         myTasks.setAdapter(taskAdapter);
     }
 
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -67,10 +60,8 @@ public class TasksFragment extends Fragment {
         }
     }
 
-
     public void showDescriptionTask(int index) {
         textView.setText(tasks.get(index).getDescription());
     }
-
 
 }
