@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -24,12 +25,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewholder> 
     }
 
     static class MyViewholder extends RecyclerView.ViewHolder {
-        TextView name, date;
-
+        TextView title, description;
+        AppCompatImageView imageView;
         public MyViewholder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.name);
-            date = itemView.findViewById(R.id.date);
+//            name = itemView.findViewById(R.id.name);
+//            date = itemView.findViewById(R.id.date);
+            title = itemView.findViewById(R.id.title);
+
+            description = itemView.findViewById(R.id.description);
+            imageView = itemView.findViewById(R.id.imageView);
         }
     }
 
@@ -44,8 +49,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewholder> 
 
     @Override
     public void onBindViewHolder(@NonNull TaskAdapter.MyViewholder holder, int position) {
-        holder.name.setText(myTasks.get(position).getName());
-        holder.date.setText(myTasks.get(position).getDate());
+        holder.title.setText(myTasks.get(position).getName());
+        holder.description.setText(myTasks.get(position).getDate());
+//        holder.itemView.set
         boolean isLandscape = context.getResources().getConfiguration().
                 orientation == Configuration.ORIENTATION_LANDSCAPE;
         holder.itemView.setOnClickListener(v -> {
